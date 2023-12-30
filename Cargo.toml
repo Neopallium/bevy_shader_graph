@@ -20,7 +20,7 @@ default = ["egui"]
 egui = ["dep:egui", "egui_extras"]
 
 [dependencies]
-node_engine = { path = "../node_engine/", default-features = false, features = ["egui"] }
+node_engine = { version = "0.1", path = "../node_engine/", default-features = false, features = ["egui"] }
 anyhow = "1.0"
 log = "0.4"
 serde = { version = "1", features = ["derive", "rc"] }
