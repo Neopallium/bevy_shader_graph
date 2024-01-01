@@ -1,0 +1,439 @@
+{
+  "id": "767d8daa-9a75-4742-b3b9-29edc2822b6b",
+  "editor": {
+    "size": {
+      "x": 10000.0,
+      "y": 10000.0
+    },
+    "origin": {
+      "x": 5000.0,
+      "y": 5000.0
+    },
+    "zoom": 0.46000004,
+    "scroll_offset": {
+      "x": 4407.134,
+      "y": 4730.274
+    }
+  },
+  "properties": [],
+  "nodes": [
+    {
+      "id": "76fa86b4-4498-4296-8b3c-f515272b800b",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "Fragment output",
+      "node_type": "ec5257be-4f2e-59d3-8c51-043c532687eb",
+      "node": {
+        "color": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "connected": [
+            {
+              "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+              "idx": 0
+            },
+            "Vec4"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 1727.1847,
+          "y": 35.749233
+        },
+        "max": {
+          "x": 1939.1847,
+          "y": 86.74921
+        }
+      }
+    },
+    {
+      "id": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "UV",
+      "node_type": "959916f2-5acf-561a-8b08-29d5e18160a6",
+      "node": {},
+      "area": {
+        "min": {
+          "x": -547.49316,
+          "y": 253.02528
+        },
+        "max": {
+          "x": -335.49316,
+          "y": 304.02527
+        }
+      }
+    },
+    {
+      "id": "23781007-e1a6-413b-a16b-c745638fefa2",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "Fraction",
+      "node_type": "0472481c-82f5-558b-8069-3a79f54fb5e2",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -401.96384,
+          "y": 183.61589
+        },
+        "max": {
+          "x": -189.96387,
+          "y": 234.6159
+        }
+      }
+    },
+    {
+      "id": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "Multiply",
+      "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "23781007-e1a6-413b-a16b-c745638fefa2",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              2.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -313.52426,
+          "y": 263.65335
+        },
+        "max": {
+          "x": -101.52423,
+          "y": 335.65332
+        }
+      }
+    },
+    {
+      "id": "566c99e6-94ac-49e7-bdc4-72d63af6ed94",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "Subtract",
+      "node_type": "8ede7412-4df6-54d5-8254-1e6eaa46420b",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -96.0438,
+          "y": 186.2229
+        },
+        "max": {
+          "x": 115.95614,
+          "y": 258.2229
+        }
+      }
+    },
+    {
+      "id": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "Split",
+      "node_type": "8a39058b-f647-57b9-adce-7249280f05b8",
+      "node": {
+        "input": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "566c99e6-94ac-49e7-bdc4-72d63af6ed94",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -26.999632,
+          "y": 269.7829
+        },
+        "max": {
+          "x": 185.0006,
+          "y": 383.78268
+        }
+      }
+    },
+    {
+      "id": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "name": "Combine",
+      "node_type": "13481ca1-b778-5bef-9144-b023572fe100",
+      "node": {
+        "r": {
+          "value": 0.0,
+          "connected": [
+            {
+              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+              "idx": 0
+            },
+            "F32"
+          ]
+        },
+        "g": {
+          "value": 0.0,
+          "connected": [
+            {
+              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+              "idx": 1
+            },
+            "F32"
+          ]
+        },
+        "b": {
+          "value": -1.0,
+          "connected": null
+        },
+        "a": {
+          "value": 0.0,
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": 206.78067,
+          "y": 265.23093
+        },
+        "max": {
+          "x": 418.7807,
+          "y": 379.2307
+        }
+      }
+    },
+    {
+      "id": "18abd60c-fd57-495c-8881-3914b2b77b60",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "Texture Sample",
+      "node_type": "261b6a78-477d-5053-844e-ac849e4feac2",
+      "node": {
+        "uv": {
+          "value": [
+            [
+              0.0,
+              0.0
+            ],
+            "UV0"
+          ],
+          "connected": [
+            {
+              "node": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
+              "idx": 0
+            },
+            "Vec2"
+          ]
+        },
+        "tex": {
+          "value": null,
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": 1127.7987,
+          "y": -134.21297
+        },
+        "max": {
+          "x": 1339.7987,
+          "y": -62.212982
+        }
+      }
+    },
+    {
+      "id": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "UV",
+      "node_type": "959916f2-5acf-561a-8b08-29d5e18160a6",
+      "node": {},
+      "area": {
+        "min": {
+          "x": 818.8797,
+          "y": -140.28119
+        },
+        "max": {
+          "x": 1030.8798,
+          "y": -89.2812
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "title": "Calculate Virtual Room Bounding Box",
+      "area": {
+        "min": {
+          "x": -597.49316,
+          "y": 133.61589
+        },
+        "max": {
+          "x": 468.78076,
+          "y": 433.7827
+        }
+      }
+    }
+  ],
+  "connections": [
+    {
+      "input": {
+        "node": "23781007-e1a6-413b-a16b-c745638fefa2",
+        "idx": 0
+      },
+      "output": {
+        "node": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
+        "idx": 0
+      },
+      "output": {
+        "node": "23781007-e1a6-413b-a16b-c745638fefa2",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "566c99e6-94ac-49e7-bdc4-72d63af6ed94",
+        "idx": 0
+      },
+      "output": {
+        "node": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+        "idx": 0
+      },
+      "output": {
+        "node": "566c99e6-94ac-49e7-bdc4-72d63af6ed94",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 0
+      },
+      "output": {
+        "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 1
+      },
+      "output": {
+        "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+        "idx": 1
+      }
+    },
+    {
+      "input": {
+        "node": "18abd60c-fd57-495c-8881-3914b2b77b60",
+        "idx": 0
+      },
+      "output": {
+        "node": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "76fa86b4-4498-4296-8b3c-f515272b800b",
+        "idx": 0
+      },
+      "output": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 0
+      }
+    }
+  ],
+  "output": "76fa86b4-4498-4296-8b3c-f515272b800b"
+}

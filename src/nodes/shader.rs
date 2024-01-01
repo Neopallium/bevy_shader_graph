@@ -20,7 +20,7 @@ impl_node! {
       /// Texture. TODO: implement.
       pub tex: Input<Texture2DHandle>,
       /// RGBA value.
-      pub rgba: Output<Vec4> Color("WHITE"),
+      pub rgba: Output<Color>,
     }
 
     impl TextureNode {
@@ -31,13 +31,12 @@ impl_node! {
 
     impl NodeImpl for TextureNode {
       fn compile(&self, graph: &NodeGraph, compile: &mut NodeGraphCompile, id: NodeId) -> Result<()> {
-        let uv = self.uv.compile(graph, compile)?;
-        let block = compile.current_block()?;
+        let (uv, _tex) = self.resolve_inputs(graph, compile)?;
         // TODO: add context lookups.
-        block.append_output(id, format!(r#"
+        let code = format!(r#"
 textureSampleBias(pbr_bindings::base_color_texture, pbr_bindings::base_color_sampler, {uv}, view.mip_bias)
-"#));
-        Ok(())
+"#);
+        compile.add_output(id.into(), "texture_node", code, DataType::Vec4)
       }
     }
   }
@@ -46,7 +45,7 @@ textureSampleBias(pbr_bindings::base_color_texture, pbr_bindings::base_color_sam
 impl_node! {
   mod uv_node {
     NodeInfo {
-      name: "UV Node",
+      name: "UV",
       description: "Vertex or Fragment UV",
       category: ["UV"],
     }
@@ -54,8 +53,6 @@ impl_node! {
     /// The vertex/fragment UV value.
     #[derive(Default)]
     pub struct UVNode {
-      /// UV Channel.
-      pub channel: Param<UvChannel>,
       /// UV value.
       pub uv: Output<Vec2>,
     }
@@ -68,10 +65,8 @@ impl_node! {
 
     impl NodeImpl for UVNode {
       fn compile(&self, _graph: &NodeGraph, compile: &mut NodeGraphCompile, id: NodeId) -> Result<()> {
-        let block = compile.current_block()?;
         // TODO: add context lookups.
-        block.append_output(id, "in.uv".to_string());
-        Ok(())
+        compile.add_output(id.into(), "uv_node", format!("in.uv"), DataType::Vec2)
       }
     }
   }
@@ -80,7 +75,7 @@ impl_node! {
 impl_node! {
   mod fragment_output_node {
     NodeInfo {
-      name: "Fragment output",
+      name: "Fragment",
       description: "Fragment shader node",
       category: ["Output"],
     }
@@ -167,7 +162,7 @@ fn fragment(
               .to_string(),
           );
         }
-        let color = self.color.compile(graph, compile)?;
+        let color = self.resolve_inputs(graph, compile)?;
         let block = compile.current_block()?;
         block.append(format!(r#"
   // Color from graph input `color`.
