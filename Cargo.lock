@@ -2951,6 +2951,7 @@ name = "node_engine"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "bevy",
  "ecolor",
  "egui",
  "egui_extras",

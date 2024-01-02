@@ -7,7 +7,6 @@ use bevy::{
 
 pub mod material;
 pub use material::*;
-pub mod nodes;
 #[cfg(feature = "egui")]
 pub mod editor;
 #[cfg(feature = "egui")]

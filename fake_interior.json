@@ -9,67 +9,63 @@
       "x": 5000.0,
       "y": 5000.0
     },
-    "zoom": 0.46000004,
+    "zoom": 0.3000002,
     "scroll_offset": {
-      "x": 4407.134,
-      "y": 4730.274
+      "x": 3338.5398,
+      "y": 4087.9758
     }
   },
   "properties": [],
   "nodes": [
     {
-      "id": "76fa86b4-4498-4296-8b3c-f515272b800b",
-      "group_id": "00000000-0000-0000-0000-000000000000",
-      "name": "Fragment output",
-      "node_type": "ec5257be-4f2e-59d3-8c51-043c532687eb",
+      "id": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
+      "name": "Combine",
+      "node_type": "13481ca1-b778-5bef-9144-b023572fe100",
       "node": {
-        "color": {
-          "value": [
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
+        "r": {
+          "value": 0.0,
           "connected": [
             {
-              "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
               "idx": 0
             },
-            "Vec4"
+            "F32"
           ]
+        },
+        "g": {
+          "value": 0.0,
+          "connected": [
+            {
+              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+              "idx": 1
+            },
+            "F32"
+          ]
+        },
+        "b": {
+          "value": -1.0,
+          "connected": null
+        },
+        "a": {
+          "value": 0.0,
+          "connected": null
         }
       },
       "area": {
         "min": {
-          "x": 1727.1847,
-          "y": 35.749233
+          "x": -1157.4624,
+          "y": 297.354
         },
         "max": {
-          "x": 1939.1847,
-          "y": 86.74921
-        }
-      }
-    },
-    {
-      "id": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
-      "name": "UV",
-      "node_type": "959916f2-5acf-561a-8b08-29d5e18160a6",
-      "node": {},
-      "area": {
-        "min": {
-          "x": -547.49316,
-          "y": 253.02528
-        },
-        "max": {
-          "x": -335.49316,
-          "y": 304.02527
+          "x": -945.4624,
+          "y": 412.68707
         }
       }
     },
     {
       "id": "23781007-e1a6-413b-a16b-c745638fefa2",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
       "name": "Fraction",
       "node_type": "0472481c-82f5-558b-8069-3a79f54fb5e2",
       "node": {
@@ -85,7 +81,7 @@
           },
           "connected": [
             {
-              "node": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
+              "node": "81e31d17-ad03-4a47-ab33-d0b414b4a8a2",
               "idx": 0
             },
             "DynamicVector"
@@ -94,18 +90,18 @@
       },
       "area": {
         "min": {
-          "x": -401.96384,
-          "y": 183.61589
+          "x": -2050.0251,
+          "y": 213.58438
         },
         "max": {
-          "x": -189.96387,
-          "y": 234.6159
+          "x": -1838.0253,
+          "y": 264.5844
         }
       }
     },
     {
       "id": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
       "name": "Multiply",
       "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
       "node": {
@@ -142,18 +138,18 @@
       },
       "area": {
         "min": {
-          "x": -313.52426,
-          "y": 263.65335
+          "x": -1796.8384,
+          "y": 203.27272
         },
         "max": {
-          "x": -101.52423,
-          "y": 335.65332
+          "x": -1584.8381,
+          "y": 275.9392
         }
       }
     },
     {
       "id": "566c99e6-94ac-49e7-bdc4-72d63af6ed94",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
       "name": "Subtract",
       "node_type": "8ede7412-4df6-54d5-8254-1e6eaa46420b",
       "node": {
@@ -190,18 +186,18 @@
       },
       "area": {
         "min": {
-          "x": -96.0438,
-          "y": 186.2229
+          "x": -1486.3118,
+          "y": 196.1492
         },
         "max": {
-          "x": 115.95614,
-          "y": 258.2229
+          "x": -1274.3118,
+          "y": 268.81567
         }
       }
     },
     {
       "id": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
       "name": "Split",
       "node_type": "8a39058b-f647-57b9-adce-7249280f05b8",
       "node": {
@@ -226,66 +222,89 @@
       },
       "area": {
         "min": {
-          "x": -26.999632,
-          "y": 269.7829
+          "x": -1409.71,
+          "y": 291.84598
         },
         "max": {
-          "x": 185.0006,
-          "y": 383.78268
+          "x": -1197.7095,
+          "y": 405.8458
         }
       }
     },
     {
-      "id": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
-      "group_id": "dd5301ce-535a-4698-86ac-52d95105e969",
-      "name": "Combine",
-      "node_type": "13481ca1-b778-5bef-9144-b023572fe100",
+      "id": "7aeeb5e0-6bdb-4985-91e3-e0080c87e6d0",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
+      "name": "UV",
+      "node_type": "050170d1-9c48-55b3-8882-61a3c21bedb5",
+      "node": {},
+      "area": {
+        "min": {
+          "x": -2524.598,
+          "y": 169.5899
+        },
+        "max": {
+          "x": -2312.598,
+          "y": 220.58989
+        }
+      }
+    },
+    {
+      "id": "7d23aca9-b012-41d0-a258-d248fa60e73f",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "Fragment",
+      "node_type": "720bfcaf-9845-5444-a424-66a7879f9173",
       "node": {
-        "r": {
-          "value": 0.0,
+        "color": {
+          "value": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
           "connected": [
             {
-              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
+              "node": "63e02ba7-7c03-44fb-98cf-b47973e41f4d",
               "idx": 0
             },
-            "F32"
+            "Vec4"
           ]
-        },
-        "g": {
-          "value": 0.0,
-          "connected": [
-            {
-              "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
-              "idx": 1
-            },
-            "F32"
-          ]
-        },
-        "b": {
-          "value": -1.0,
-          "connected": null
-        },
-        "a": {
-          "value": 0.0,
-          "connected": null
         }
       },
       "area": {
         "min": {
-          "x": 206.78067,
-          "y": 265.23093
+          "x": 1585.2921,
+          "y": 24.002703
         },
         "max": {
-          "x": 418.7807,
-          "y": 379.2307
+          "x": 1797.2922,
+          "y": 75.002525
         }
       }
     },
     {
-      "id": "18abd60c-fd57-495c-8881-3914b2b77b60",
-      "group_id": "00000000-0000-0000-0000-000000000000",
-      "name": "Texture Sample",
-      "node_type": "261b6a78-477d-5053-844e-ac849e4feac2",
+      "id": "d5f1d39d-b5ec-4024-9f15-03c3db509cb8",
+      "group_id": "2ab60d4e-7e82-40a8-84c3-fda5afe9f278",
+      "name": "View direction",
+      "node_type": "8fa1bd41-1525-5413-bb65-557b351760bb",
+      "node": {
+        "space": "Tangent"
+      },
+      "area": {
+        "min": {
+          "x": -1294.7416,
+          "y": -843.87225
+        },
+        "max": {
+          "x": -1082.7415,
+          "y": -748.2055
+        }
+      }
+    },
+    {
+      "id": "81e31d17-ad03-4a47-ab33-d0b414b4a8a2",
+      "group_id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
+      "name": "Tiling and Offset",
+      "node_type": "cb4d941c-acac-5541-8d88-39cf6d4b31d3",
       "node": {
         "uv": {
           "value": [
@@ -297,7 +316,804 @@
           ],
           "connected": [
             {
-              "node": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
+              "node": "7aeeb5e0-6bdb-4985-91e3-e0080c87e6d0",
+              "idx": 0
+            },
+            "Vec2"
+          ]
+        },
+        "tiling": {
+          "value": [
+            1.0,
+            1.0
+          ],
+          "connected": null
+        },
+        "offset": {
+          "value": [
+            0.0,
+            0.0
+          ],
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -2309.078,
+          "y": 254.87302
+        },
+        "max": {
+          "x": -2097.078,
+          "y": 348.55255
+        }
+      }
+    },
+    {
+      "id": "6da5cb89-a982-418b-90f2-c5198c20a6ec",
+      "group_id": "d1913016-ad7d-4d59-8864-8a8dcf1c461e",
+      "name": "Divide",
+      "node_type": "121d1ee1-8395-5887-8266-f428a7fef959",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "4f1a5c6f-e8d8-4816-a0b0-614d4b26b885",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -1900.2039,
+          "y": -434.87955
+        },
+        "max": {
+          "x": -1688.2039,
+          "y": -316.53964
+        }
+      }
+    },
+    {
+      "id": "7292dbd8-3656-4746-9da4-3c67a9f38c82",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "Far fraction",
+      "node_type": "658dc787-d271-5933-a4be-9e71bcb1fc3d",
+      "node": {
+        "value": 0.5
+      },
+      "area": {
+        "min": {
+          "x": -2395.7385,
+          "y": -231.19958
+        },
+        "max": {
+          "x": -2183.7385,
+          "y": -138.21265
+        }
+      }
+    },
+    {
+      "id": "9ca9df6e-3697-4200-b06b-25c38c8f8378",
+      "group_id": "d1913016-ad7d-4d59-8864-8a8dcf1c461e",
+      "name": "Subtract",
+      "node_type": "8ede7412-4df6-54d5-8254-1e6eaa46420b",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "6da5cb89-a982-418b-90f2-c5198c20a6ec",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -1655.6462,
+          "y": -411.09622
+        },
+        "max": {
+          "x": -1443.6462,
+          "y": -292.4296
+        }
+      }
+    },
+    {
+      "id": "4f1a5c6f-e8d8-4816-a0b0-614d4b26b885",
+      "group_id": "d1913016-ad7d-4d59-8864-8a8dcf1c461e",
+      "name": "Subtract",
+      "node_type": "8ede7412-4df6-54d5-8254-1e6eaa46420b",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "7292dbd8-3656-4746-9da4-3c67a9f38c82",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -2145.0605,
+          "y": -428.32266
+        },
+        "max": {
+          "x": -1933.0604,
+          "y": -309.98276
+        }
+      }
+    },
+    {
+      "id": "31147db3-9e9c-42e7-a59f-09d90d74c451",
+      "group_id": "2ab60d4e-7e82-40a8-84c3-fda5afe9f278",
+      "name": "Combine",
+      "node_type": "13481ca1-b778-5bef-9144-b023572fe100",
+      "node": {
+        "r": {
+          "value": 1.0,
+          "connected": null
+        },
+        "g": {
+          "value": 1.0,
+          "connected": null
+        },
+        "b": {
+          "value": 0.0,
+          "connected": [
+            {
+              "node": "85f39f53-965f-42ea-b6ba-e6448b853f4c",
+              "idx": 0
+            },
+            "F32"
+          ]
+        },
+        "a": {
+          "value": 0.0,
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -1137.3009,
+          "y": -718.87775
+        },
+        "max": {
+          "x": -925.3008,
+          "y": -602.8776
+        }
+      }
+    },
+    {
+      "id": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+      "group_id": "2ab60d4e-7e82-40a8-84c3-fda5afe9f278",
+      "name": "Multiply",
+      "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "d5f1d39d-b5ec-4024-9f15-03c3db509cb8",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "31147db3-9e9c-42e7-a59f-09d90d74c451",
+              "idx": 1
+            },
+            "Dynamic"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -846.44037,
+          "y": -802.20215
+        },
+        "max": {
+          "x": -634.44006,
+          "y": -730.2023
+        }
+      }
+    },
+    {
+      "id": "85f39f53-965f-42ea-b6ba-e6448b853f4c",
+      "group_id": "2ab60d4e-7e82-40a8-84c3-fda5afe9f278",
+      "name": "Multiply",
+      "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "9ca9df6e-3697-4200-b06b-25c38c8f8378",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              -1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        }
+      },
+      "area": {
+        "min": {
+          "x": -1376.4213,
+          "y": -727.42194
+        },
+        "max": {
+          "x": -1164.4213,
+          "y": -608.75525
+        }
+      }
+    },
+    {
+      "id": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+      "group_id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "name": "Divide",
+      "node_type": "121d1ee1-8395-5887-8266-f428a7fef959",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": null
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -457.4396,
+          "y": -1002.4438
+        },
+        "max": {
+          "x": -245.4389,
+          "y": -929.7771
+        }
+      }
+    },
+    {
+      "id": "586ad562-cbfb-4130-8eea-8fb7a1941cb0",
+      "group_id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "name": "Absolute",
+      "node_type": "ef412aee-d070-583a-bc22-81574ecb0aed",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -110.252235,
+          "y": -1061.2084
+        },
+        "max": {
+          "x": 101.747856,
+          "y": -1010.20844
+        }
+      }
+    },
+    {
+      "id": "4cbf6ed1-cc3a-44aa-af88-3f299fe6c451",
+      "group_id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "name": "Multiply",
+      "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+              "idx": 1
+            },
+            "Dynamic"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": -109.33524,
+          "y": -902.7631
+        },
+        "max": {
+          "x": 102.66485,
+          "y": -830.76324
+        }
+      }
+    },
+    {
+      "id": "a299a3b1-4b39-452d-8ae3-4e5ec6fdfc4d",
+      "group_id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "name": "Subtract",
+      "node_type": "8ede7412-4df6-54d5-8254-1e6eaa46420b",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "586ad562-cbfb-4130-8eea-8fb7a1941cb0",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "4cbf6ed1-cc3a-44aa-af88-3f299fe6c451",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 215.29889,
+          "y": -975.81714
+        },
+        "max": {
+          "x": 427.29895,
+          "y": -903.81726
+        }
+      }
+    },
+    {
+      "id": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+      "group_id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "name": "Split",
+      "node_type": "8a39058b-f647-57b9-adce-7249280f05b8",
+      "node": {
+        "input": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "a299a3b1-4b39-452d-8ae3-4e5ec6fdfc4d",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 495.05826,
+          "y": -934.041
+        },
+        "max": {
+          "x": 707.0585,
+          "y": -820.04114
+        }
+      }
+    },
+    {
+      "id": "1385cbba-9134-4044-aca0-eafcbb1702a9",
+      "group_id": "54f9b124-d69a-43d3-b1e3-712c1eafcbfe",
+      "name": "Minimum",
+      "node_type": "d68e2187-3c23-50c0-a4c9-3ae39c6748be",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+              "idx": 1
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 852.8892,
+          "y": -1002.2653
+        },
+        "max": {
+          "x": 1064.8888,
+          "y": -930.2654
+        }
+      }
+    },
+    {
+      "id": "38855045-06b3-4af3-a5d6-9b9bc522cb98",
+      "group_id": "54f9b124-d69a-43d3-b1e3-712c1eafcbfe",
+      "name": "Minimum",
+      "node_type": "d68e2187-3c23-50c0-a4c9-3ae39c6748be",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "1385cbba-9134-4044-aca0-eafcbb1702a9",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+              "idx": 2
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 1160.0421,
+          "y": -975.88544
+        },
+        "max": {
+          "x": 1372.0421,
+          "y": -903.88556
+        }
+      }
+    },
+    {
+      "id": "f94ff275-8041-40eb-a67f-9f2ed2eb2041",
+      "group_id": "b872964a-9dc1-461c-96a1-4d255f2ab5e4",
+      "name": "Multiply",
+      "node_type": "481abe34-be9b-5182-8ba3-6f2bffdf1137",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "38855045-06b3-4af3-a5d6-9b9bc522cb98",
+              "idx": 0
+            },
+            "Dynamic"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 669.8688,
+          "y": -649.2131
+        },
+        "max": {
+          "x": 881.86865,
+          "y": -577.2131
+        }
+      }
+    },
+    {
+      "id": "247eb2b3-9722-41f1-960b-6db3689b0aaf",
+      "group_id": "b872964a-9dc1-461c-96a1-4d255f2ab5e4",
+      "name": "Add",
+      "node_type": "40d27a23-7f5c-5ba9-9c6e-c8d5847561af",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "f94ff275-8041-40eb-a67f-9f2ed2eb2041",
+              "idx": 0
+            },
+            "DynamicVector"
+          ]
+        },
+        "b": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+              "idx": 1
+            },
+            "DynamicVector"
+          ]
+        }
+      },
+      "area": {
+        "min": {
+          "x": 937.7318,
+          "y": -617.622
+        },
+        "max": {
+          "x": 1149.7296,
+          "y": -545.6221
+        }
+      }
+    },
+    {
+      "id": "63e02ba7-7c03-44fb-98cf-b47973e41f4d",
+      "group_id": "00000000-0000-0000-0000-000000000000",
+      "name": "Texture Sample",
+      "node_type": "e8bc5d8e-524f-505c-a41f-b5cb97575d48",
+      "node": {
+        "uv": {
+          "value": [
+            [
+              0.0,
+              0.0
+            ],
+            "UV0"
+          ],
+          "connected": [
+            {
+              "node": "c23c29f6-a2f4-46d5-ae46-0f68fe82fd8c",
               "idx": 0
             },
             "Vec2"
@@ -310,45 +1126,134 @@
       },
       "area": {
         "min": {
-          "x": 1127.7987,
-          "y": -134.21297
+          "x": 1410.5878,
+          "y": -86.480644
         },
         "max": {
-          "x": 1339.7987,
-          "y": -62.212982
+          "x": 1622.5878,
+          "y": -13.813835
         }
       }
     },
     {
-      "id": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
+      "id": "c23c29f6-a2f4-46d5-ae46-0f68fe82fd8c",
       "group_id": "00000000-0000-0000-0000-000000000000",
-      "name": "UV",
-      "node_type": "959916f2-5acf-561a-8b08-29d5e18160a6",
-      "node": {},
+      "name": "Fraction",
+      "node_type": "0472481c-82f5-558b-8069-3a79f54fb5e2",
+      "node": {
+        "a": {
+          "value": {
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size": "D1"
+          },
+          "connected": [
+            {
+              "node": "247eb2b3-9722-41f1-960b-6db3689b0aaf",
+              "idx": 0
+            },
+            "Vec3"
+          ]
+        }
+      },
       "area": {
         "min": {
-          "x": 818.8797,
-          "y": -140.28119
+          "x": 1121.1844,
+          "y": -41.443962
         },
         "max": {
-          "x": 1030.8798,
-          "y": -89.2812
+          "x": 1333.1844,
+          "y": 9.555862
         }
       }
     }
   ],
   "groups": [
     {
-      "id": "dd5301ce-535a-4698-86ac-52d95105e969",
-      "title": "Calculate Virtual Room Bounding Box",
+      "id": "d69d3d06-4b54-4c3f-8b0f-a6e8a884ae93",
+      "title": "Calculate Room Bounding Box",
       "area": {
         "min": {
-          "x": -597.49316,
-          "y": 133.61589
+          "x": -2574.598,
+          "y": 119.589905
         },
         "max": {
-          "x": 468.78076,
-          "y": 433.7827
+          "x": -895.4624,
+          "y": 462.68707
+        }
+      }
+    },
+    {
+      "id": "d1913016-ad7d-4d59-8864-8a8dcf1c461e",
+      "title": "Depth Scale",
+      "area": {
+        "min": {
+          "x": -2195.0605,
+          "y": -484.87955
+        },
+        "max": {
+          "x": -1393.6462,
+          "y": -242.4296
+        }
+      }
+    },
+    {
+      "id": "2ab60d4e-7e82-40a8-84c3-fda5afe9f278",
+      "title": "Tangent View Direction",
+      "area": {
+        "min": {
+          "x": -1426.4213,
+          "y": -893.87225
+        },
+        "max": {
+          "x": -584.44006,
+          "y": -552.8776
+        }
+      }
+    },
+    {
+      "id": "1635d953-fc94-44ff-b8af-22b6fdbf49b0",
+      "title": "Find Real Window Corner",
+      "area": {
+        "min": {
+          "x": -507.4396,
+          "y": -1111.2084
+        },
+        "max": {
+          "x": 757.0585,
+          "y": -770.04114
+        }
+      }
+    },
+    {
+      "id": "54f9b124-d69a-43d3-b1e3-712c1eafcbfe",
+      "title": "Get Wall Corners",
+      "area": {
+        "min": {
+          "x": 802.88916,
+          "y": -1052.265
+        },
+        "max": {
+          "x": 1422.0409,
+          "y": -853.88544
+        }
+      }
+    },
+    {
+      "id": "b872964a-9dc1-461c-96a1-4d255f2ab5e4",
+      "title": "Raycasting + Intersections",
+      "area": {
+        "min": {
+          "x": 619.869,
+          "y": -699.2131
+        },
+        "max": {
+          "x": 1199.7294,
+          "y": -495.62207
         }
       }
     }
@@ -356,16 +1261,6 @@
   "connections": [
     {
       "input": {
-        "node": "23781007-e1a6-413b-a16b-c745638fefa2",
-        "idx": 0
-      },
-      "output": {
-        "node": "4e130f4d-b566-4638-8e63-48a9c6d29e40",
-        "idx": 0
-      }
-    },
-    {
-      "input": {
         "node": "ac3c053e-e052-4cd7-ba62-dfd0a4ca0677",
         "idx": 0
       },
@@ -412,16 +1307,6 @@
       "output": {
         "node": "a2f5d28c-afa3-4be1-ae5a-d8f19ccc0619",
         "idx": 1
-      }
-    },
-    {
-      "input": {
-        "node": "18abd60c-fd57-495c-8881-3914b2b77b60",
-        "idx": 0
-      },
-      "output": {
-        "node": "440f2d64-b81b-475d-8be1-6c0f279e0dc7",
-        "idx": 0
       }
     },
     {
@@ -433,7 +1318,287 @@
         "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
         "idx": 0
       }
+    },
+    {
+      "input": {
+        "node": "23781007-e1a6-413b-a16b-c745638fefa2",
+        "idx": 0
+      },
+      "output": {
+        "node": "81e31d17-ad03-4a47-ab33-d0b414b4a8a2",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "d1da039f-79a4-47e7-bb8d-1b37002cd6f0",
+        "idx": 0
+      },
+      "output": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "4cbf6ed1-cc3a-44aa-af88-3f299fe6c451",
+        "idx": 0
+      },
+      "output": {
+        "node": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "81e31d17-ad03-4a47-ab33-d0b414b4a8a2",
+        "idx": 0
+      },
+      "output": {
+        "node": "7aeeb5e0-6bdb-4985-91e3-e0080c87e6d0",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "4f1a5c6f-e8d8-4816-a0b0-614d4b26b885",
+        "idx": 1
+      },
+      "output": {
+        "node": "7292dbd8-3656-4746-9da4-3c67a9f38c82",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "6da5cb89-a982-418b-90f2-c5198c20a6ec",
+        "idx": 1
+      },
+      "output": {
+        "node": "4f1a5c6f-e8d8-4816-a0b0-614d4b26b885",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "9ca9df6e-3697-4200-b06b-25c38c8f8378",
+        "idx": 0
+      },
+      "output": {
+        "node": "6da5cb89-a982-418b-90f2-c5198c20a6ec",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "31147db3-9e9c-42e7-a59f-09d90d74c451",
+        "idx": 2
+      },
+      "output": {
+        "node": "85f39f53-965f-42ea-b6ba-e6448b853f4c",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "85f39f53-965f-42ea-b6ba-e6448b853f4c",
+        "idx": 0
+      },
+      "output": {
+        "node": "9ca9df6e-3697-4200-b06b-25c38c8f8378",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+        "idx": 0
+      },
+      "output": {
+        "node": "d5f1d39d-b5ec-4024-9f15-03c3db509cb8",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+        "idx": 1
+      },
+      "output": {
+        "node": "31147db3-9e9c-42e7-a59f-09d90d74c451",
+        "idx": 1
+      }
+    },
+    {
+      "input": {
+        "node": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+        "idx": 1
+      },
+      "output": {
+        "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "586ad562-cbfb-4130-8eea-8fb7a1941cb0",
+        "idx": 0
+      },
+      "output": {
+        "node": "8c8466cc-30ee-4b0d-9589-7400a7987d0d",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "63e02ba7-7c03-44fb-98cf-b47973e41f4d",
+        "idx": 0
+      },
+      "output": {
+        "node": "c23c29f6-a2f4-46d5-ae46-0f68fe82fd8c",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "4cbf6ed1-cc3a-44aa-af88-3f299fe6c451",
+        "idx": 1
+      },
+      "output": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 1
+      }
+    },
+    {
+      "input": {
+        "node": "a299a3b1-4b39-452d-8ae3-4e5ec6fdfc4d",
+        "idx": 0
+      },
+      "output": {
+        "node": "586ad562-cbfb-4130-8eea-8fb7a1941cb0",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "a299a3b1-4b39-452d-8ae3-4e5ec6fdfc4d",
+        "idx": 1
+      },
+      "output": {
+        "node": "4cbf6ed1-cc3a-44aa-af88-3f299fe6c451",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+        "idx": 0
+      },
+      "output": {
+        "node": "a299a3b1-4b39-452d-8ae3-4e5ec6fdfc4d",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "1385cbba-9134-4044-aca0-eafcbb1702a9",
+        "idx": 0
+      },
+      "output": {
+        "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "1385cbba-9134-4044-aca0-eafcbb1702a9",
+        "idx": 1
+      },
+      "output": {
+        "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+        "idx": 1
+      }
+    },
+    {
+      "input": {
+        "node": "38855045-06b3-4af3-a5d6-9b9bc522cb98",
+        "idx": 0
+      },
+      "output": {
+        "node": "1385cbba-9134-4044-aca0-eafcbb1702a9",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "38855045-06b3-4af3-a5d6-9b9bc522cb98",
+        "idx": 1
+      },
+      "output": {
+        "node": "30975be5-cee1-48e6-9773-28c0a3df6c3d",
+        "idx": 2
+      }
+    },
+    {
+      "input": {
+        "node": "247eb2b3-9722-41f1-960b-6db3689b0aaf",
+        "idx": 0
+      },
+      "output": {
+        "node": "f94ff275-8041-40eb-a67f-9f2ed2eb2041",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "f94ff275-8041-40eb-a67f-9f2ed2eb2041",
+        "idx": 1
+      },
+      "output": {
+        "node": "38855045-06b3-4af3-a5d6-9b9bc522cb98",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "f94ff275-8041-40eb-a67f-9f2ed2eb2041",
+        "idx": 0
+      },
+      "output": {
+        "node": "82c58fa8-e9fe-4a9b-be6e-611e7a91c874",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "247eb2b3-9722-41f1-960b-6db3689b0aaf",
+        "idx": 1
+      },
+      "output": {
+        "node": "b64681cb-3260-4e56-86c0-6e3e10289cd7",
+        "idx": 1
+      }
+    },
+    {
+      "input": {
+        "node": "7d23aca9-b012-41d0-a258-d248fa60e73f",
+        "idx": 0
+      },
+      "output": {
+        "node": "63e02ba7-7c03-44fb-98cf-b47973e41f4d",
+        "idx": 0
+      }
+    },
+    {
+      "input": {
+        "node": "c23c29f6-a2f4-46d5-ae46-0f68fe82fd8c",
+        "idx": 0
+      },
+      "output": {
+        "node": "247eb2b3-9722-41f1-960b-6db3689b0aaf",
+        "idx": 0
+      }
     }
   ],
-  "output": "76fa86b4-4498-4296-8b3c-f515272b800b"
+  "output": "7d23aca9-b012-41d0-a258-d248fa60e73f"
 }
