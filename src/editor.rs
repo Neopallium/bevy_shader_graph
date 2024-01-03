@@ -46,7 +46,7 @@ impl Default for ShaderGraphEditor {
 
     Self {
       title: "Graph editor".to_string(),
-      size: (500., 300.).into(),
+      size: (1000., 300.).into(),
       graph,
       registry,
       node_filter: Default::default(),
@@ -95,6 +95,10 @@ impl ShaderGraphEditor {
 
   pub fn toggle_open(&mut self) {
     self.open = !self.open;
+  }
+
+  pub fn toggle_open_preview(&mut self) {
+    self.open_preview = !self.open_preview;
   }
 
   pub fn show(&mut self, ctx: &egui::Context) -> bool {
@@ -165,8 +169,8 @@ impl ShaderGraphEditor {
     let mut open = self.open_preview;
     egui::Window::new(format!("{} Code", self.title))
       .open(&mut open)
-      .default_pos((500., 0.))
-      .default_size(self.size)
+      .default_pos((0., 400.))
+      .default_size((700., 200.))
       .show(ctx, |ui| {
         self.preview_ui(ui);
       });
@@ -232,6 +236,9 @@ pub fn shader_editor(
   let ctx = contexts.ctx_mut();
   if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::S) {
     editor.toggle_open();
+  }
+  if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::C) {
+    editor.toggle_open_preview();
   }
   editor.show(ctx);
   editor.show_preview(ctx);

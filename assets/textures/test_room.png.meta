@@ -1,0 +1,14 @@
+(
+    meta_format_version: "1.0",
+    asset: Process(
+        processor: "bevy_asset::processor::process::LoadAndSave<bevy_render::texture::image_loader::ImageLoader, bevy_render::texture::compressed_image_saver::CompressedImageSaver>",
+        settings: (
+            loader_settings: (
+                format: FromExtension,
+                is_srgb: true,
+                sampler: Default,
+            ),
+            saver_settings: (),
+        ),
+    ),
+)
