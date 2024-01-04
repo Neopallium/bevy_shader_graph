@@ -11,7 +11,6 @@ use bevy_egui::{egui, EguiContexts};
 use node_engine::{
   NodeGraph,
   NodeRegistry,
-  NodeFilter,
   NodeGraphCompile,
 };
 
@@ -22,8 +21,6 @@ pub struct ShaderGraphEditor {
   pub title: String,
   pub size: egui::Vec2,
   pub graph: NodeGraph,
-  pub registry: NodeRegistry,
-  pub node_filter: NodeFilter,
   open: bool,
   open_preview: bool,
   file: PathBuf,
@@ -48,8 +45,6 @@ impl Default for ShaderGraphEditor {
       title: "Graph editor".to_string(),
       size: (1000., 300.).into(),
       graph,
-      registry,
-      node_filter: Default::default(),
       file: "shader_graph.json".into(),
       code: "".to_string(),
       last_change_counter: 0,
@@ -142,14 +137,10 @@ impl ShaderGraphEditor {
     if let Some(resp) = out.inner {
       // Graph menu.
       resp.context_menu(|ui| {
-        ui.menu_button("Create node", |ui| {
-          // Node filter UI.
-          self.node_filter.ui(ui);
-          if let Some(node) = self.registry.ui(ui, &self.node_filter) {
-            self.graph.add(node);
-            ui.close_menu();
-          }
-        });
+        if ui.button("Create Node").clicked() {
+          self.graph.open_node_finder(ui);
+          ui.close_menu();
+        }
         if ui.button("Group Nodes").clicked() {
           self.graph.group_selected_nodes();
           ui.close_menu();
