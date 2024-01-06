@@ -86,7 +86,6 @@ fn setup(
       },
       extension: ShaderGraphMaterial::default(),
     });
-    */
     let cube = meshes.add(Mesh::from(shape::Cube { size: 1.0 }).with_generated_tangents().unwrap());
     // back cube
     commands.spawn((MaterialMeshBundle {
@@ -102,6 +101,7 @@ fn setup(
         transform: Transform::from_xyz(1.0, 0.0, 0.8),
         ..default()
     }, Name::new("Front cube")));
+    */
 
     let mesh = meshes.add(Mesh::from(shape::Plane { size: 1.0, subdivisions: 0 })
       .with_generated_tangents().unwrap());

@@ -126,27 +126,8 @@ impl ShaderGraphEditor {
         ui.label(err_msg);
       }
     });
-    // HACK: Without this side panel, the central panel will not work with a ScrollArea.
-    egui::SidePanel::right("graph_right_panel")
-      .min_width(0.)
-      .frame(egui::Frame::none())
-      .show_separator_line(false)
-      .show_inside(ui, |_ui| {});
-
-    let out = egui::CentralPanel::default().show_inside(ui, |ui| self.graph.ui(ui));
-    if let Some(resp) = out.inner {
-      // Graph menu.
-      resp.context_menu(|ui| {
-        if ui.button("Create Node").clicked() {
-          self.graph.open_node_finder(ui);
-          ui.close_menu();
-        }
-        if ui.button("Group Nodes").clicked() {
-          self.graph.group_selected_nodes();
-          ui.close_menu();
-        }
-      });
-    }
+    self.graph.show_details(ui);
+    self.graph.show_graph(ui);
 
     // Check if graph changed.
     let counter = self.graph.changed_counter();

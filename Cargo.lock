@@ -2948,7 +2948,9 @@ dependencies = [
 
 [[package]]
 name = "node_engine"
-version = "0.1.0"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9cfdba1d7054e390411d6da708ee77a6b32fce373f7eef25abe64587401bece8"
 dependencies = [
  "anyhow",
  "bevy",
