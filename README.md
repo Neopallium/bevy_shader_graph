@@ -1,5 +1,12 @@
 # Shadergraph for Bevy
 
+## Try it out
+
+Run the example editor:
+```
+cargo run --release --example editor -- ./interior_mapping.json
+```
+
 ## Controls
 
 * Pane graph: Ctrl + left click and drag.
