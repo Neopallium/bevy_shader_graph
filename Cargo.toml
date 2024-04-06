@@ -1,6 +1,6 @@
 [package]
 name = "bevy_shader_graph"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 authors = ["Robert G. Jakabosky <rjakabosky+neopallium@neoawareness.com>"]
 license = "MIT/Apache-2.0"
@@ -20,25 +20,26 @@ default = ["egui"]
 egui = ["dep:egui", "egui_extras"]
 
 [dependencies]
-node_engine = { version = "0.2" }
+#node_engine = { version = "0.3", path = "../node_engine/" }
+node_engine = { version = "0.3" }
 anyhow = "1.0"
 log = "0.4"
 serde = { version = "1", features = ["derive", "rc"] }
 serde_json = { version = "1" }
 
-glam = { version = "0.24", features = ["serde"] }
+glam = { version = "0.25", features = ["serde"] }
 
-bevy = { version = "0.12.1", default-features = false, features = ["bevy_asset", "bevy_render", "bevy_pbr"] }
-bevy_egui = { version = "0.24" }
-egui = { version = "0.24", optional = true }
-egui_extras = { version = "0.24", optional = true }
+bevy = { version = "0.13", default-features = false, features = ["bevy_asset", "bevy_render", "bevy_pbr"] }
+bevy_egui = { version = "0.25" }
+egui = { version = "0.26", optional = true }
+egui_extras = { version = "0.26", optional = true }
 
 [dev-dependencies]
-bevy = { version = "0.12.1", features = ["dynamic_linking", "file_watcher", "asset_processor", "basis-universal", "jpeg", "tga", "exr", "zlib", "zstd", "ktx2"] }
+bevy = { version = "0.13", features = ["dynamic_linking", "file_watcher", "asset_processor", "basis-universal", "jpeg", "tga", "exr", "zlib", "zstd", "ktx2"] }
 
-bevy-inspector-egui = { version = "0.22" }
-bevy_panorbit_camera = { version = "0.10", features = ["bevy_egui"] }
-bevy_spectator = "0.4.0"
+bevy-inspector-egui = { version = "0.23" }
+bevy_panorbit_camera = { version = "0.17", features = ["bevy_egui"] }
+bevy_spectator = "0.5.0"
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]

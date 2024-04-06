@@ -1,7 +1,7 @@
 use bevy::{
   pbr::*,
   prelude::*,
-  reflect::{std_traits::ReflectDefault, Reflect, TypeUuid},
+  reflect::Reflect,
   render::{
     render_resource::*,
     mesh::*,
@@ -18,8 +18,7 @@ pub struct ShaderGraph {
 
 pub type StandardShaderGraphMaterial = ExtendedMaterial<StandardMaterial, ShaderGraphMaterial>;
 
-#[derive(Asset, AsBindGroup, Reflect, Debug, Clone, TypeUuid)]
-#[uuid = "121439ac-81a5-11ee-8d06-d3da473fad43"]
+#[derive(Asset, AsBindGroup, Reflect, Debug, Clone)]
 #[bind_group_data(ShaderGraph)]
 #[reflect(Default, Debug)]
 pub struct ShaderGraphMaterial {

@@ -199,17 +199,17 @@ impl ShaderGraphEditor {
 }
 
 pub fn shader_editor(
-  input: Res<Input<KeyCode>>,
+  input: Res<ButtonInput<KeyCode>>,
   mut editor: ResMut<ShaderGraphEditor>,
   mut contexts: EguiContexts,
   mut shaders: ResMut<Assets<Shader>>,
   mut materials: ResMut<Assets<StandardShaderGraphMaterial>>,
 ) {
   let ctx = contexts.ctx_mut();
-  if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::S) {
+  if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::KeyS) {
     editor.toggle_open();
   }
-  if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::C) {
+  if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::KeyC) {
     editor.toggle_open_preview();
   }
   editor.show(ctx);

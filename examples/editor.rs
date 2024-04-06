@@ -39,7 +39,7 @@ fn main() -> Result<()> {
 
   app.add_plugins(ShaderGraphMaterialPlugin)
     .add_plugins(bevy_inspector_egui::quick::WorldInspectorPlugin::new()
-      .run_if(common_conditions::input_toggle_active(false, KeyCode::E))
+      .run_if(common_conditions::input_toggle_active(false, KeyCode::KeyE))
     )
     .add_plugins(bevy_panorbit_camera::PanOrbitCameraPlugin)
     .insert_resource(editor)
@@ -64,8 +64,8 @@ fn setup(
 ) {
     // circular base
     commands.spawn(PbrBundle {
-        mesh: meshes.add(shape::Circle::new(4.0).into()),
-        material: materials.add(Color::WHITE.into()),
+        mesh: meshes.add(shape::Circle::new(4.0)),
+        material: materials.add(Color::WHITE),
         transform: Transform::from_xyz(0.0, -0.5, 1.0)
           .with_rotation(Quat::from_rotation_x(-std::f32::consts::FRAC_PI_2)),
         ..default()
@@ -143,8 +143,8 @@ fn setup(
     cam.insert(bevy_panorbit_camera::PanOrbitCamera {
         focus: Vec3::new(0.0, 0.0, 0.0),
         radius: Some(5.0),
-        alpha: Some(0.00),
-        beta: Some(0.0),
+        yaw: Some(0.00),
+        pitch: Some(0.0),
         ..default()
       },
     );
