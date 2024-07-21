@@ -55,7 +55,7 @@ impl MaterialExtension for ShaderGraphMaterial {
   fn specialize(
       _pipeline: &MaterialExtensionPipeline,
       descriptor: &mut RenderPipelineDescriptor,
-      _layout: &MeshVertexBufferLayout,
+      _layout: &MeshVertexBufferLayoutRef,
       key: MaterialExtensionKey<Self>
   ) -> Result<(), SpecializedMeshPipelineError> {
     //eprintln!("-- mesh.layout={layout:#?}");

@@ -35,7 +35,7 @@ impl Default for ShaderGraphEditor {
     let registry = NodeRegistry::build();
     let mut graph = NodeGraph::new();
     let root = registry
-      .new_by_name("Fragment output");
+      .new_by_name("Fragment");
     if let Some(root) = root.ok() {
       let output_id = graph.add(root);
       graph.set_output(Some(output_id));

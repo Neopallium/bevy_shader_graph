@@ -2,7 +2,7 @@ use anyhow::Result;
 
 use bevy::{
   prelude::*,
-  window::close_on_esc,
+  render::mesh::*,
   input::common_conditions,
   diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin},
 };
@@ -46,12 +46,18 @@ fn main() -> Result<()> {
     .add_systems(Startup, setup)
     .add_systems(Update, (
       shader_editor,
-      close_on_esc,
+      handle_quit,
     ));
 
   app.run();
 
   Ok(())
+}
+
+fn handle_quit(input: Res<ButtonInput<KeyCode>>, mut exit: EventWriter<AppExit>) {
+  if input.pressed(KeyCode::KeyQ) {
+    exit.send(AppExit::Success);
+  }
 }
 
 /// set up a simple 3D scene
@@ -64,7 +70,7 @@ fn setup(
 ) {
     // circular base
     commands.spawn(PbrBundle {
-        mesh: meshes.add(shape::Circle::new(4.0)),
+        mesh: meshes.add(Circle::new(4.0)),
         material: materials.add(Color::WHITE),
         transform: Transform::from_xyz(0.0, -0.5, 1.0)
           .with_rotation(Quat::from_rotation_x(-std::f32::consts::FRAC_PI_2)),
@@ -86,7 +92,7 @@ fn setup(
       },
       extension: ShaderGraphMaterial::default(),
     });
-    let cube = meshes.add(Mesh::from(shape::Cube { size: 1.0 }).with_generated_tangents().unwrap());
+    let cube = meshes.add(Mesh::from(Cuboid::from_length(1.0)).with_generated_tangents().unwrap());
     // back cube
     commands.spawn((MaterialMeshBundle {
         mesh: cube.clone(),
@@ -103,7 +109,7 @@ fn setup(
     }, Name::new("Front cube")));
     */
 
-    let mesh = meshes.add(Mesh::from(shape::Plane { size: 1.0, subdivisions: 0 })
+    let mesh = meshes.add(PlaneMeshBuilder::from_length(1.0).subdivisions(0).build()
       .with_generated_tangents().unwrap());
     // wall
     let mut wall = commands.spawn(MaterialMeshBundle {
@@ -132,7 +138,7 @@ fn setup(
         .looking_at(Vec3::new(0., 0., 0.), Vec3::Y),
       ..default()
     },FogSettings {
-        color: Color::rgba(0.25, 0.25, 0.25, 1.0),
+        color: Color::srgba(0.25, 0.25, 0.25, 1.0),
         falloff: FogFalloff::Linear {
             start: 5.0,
             end: 20.0,
