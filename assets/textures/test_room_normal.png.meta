@@ -1,7 +1,7 @@
 (
     meta_format_version: "1.0",
     asset: Process(
-        processor: "bevy_asset::processor::process::LoadAndSave<bevy_render::texture::image_loader::ImageLoader, bevy_render::texture::compressed_image_saver::CompressedImageSaver>",
+        processor: "bevy_asset::processor::process::LoadTransformAndSave<bevy_image::image_loader::ImageLoader, bevy_asset::transformer::IdentityAssetTransformer<bevy_image::image::Image>, bevy_image::compressed_image_saver::CompressedImageSaver>",
         settings: (
             loader_settings: (
                 format: FromExtension,
@@ -9,6 +9,7 @@
                 sampler: Default,
                 asset_usage: ("MAIN_WORLD | RENDER_WORLD"),
             ),
+            transformer_settings: (),
             saver_settings: (),
         ),
     ),

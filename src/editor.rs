@@ -153,10 +153,10 @@ impl ShaderGraphEditor {
   fn preview_ui(&mut self, ui: &mut egui::Ui) {
     let Self { code, .. } = self;
 
-    let theme = egui_extras::syntax_highlighting::CodeTheme::from_memory(ui.ctx());
+    let theme = egui_extras::syntax_highlighting::CodeTheme::from_memory(ui.ctx(), ui.style());
     let mut layouter = |ui: &egui::Ui, string: &str, wrap_width: f32| {
       let mut layout_job =
-          egui_extras::syntax_highlighting::highlight(ui.ctx(), &theme, string, "rs");
+          egui_extras::syntax_highlighting::highlight(ui.ctx(), ui.style(), &theme, string, "rs");
       layout_job.wrap.max_width = wrap_width;
       ui.fonts(|f| f.layout_job(layout_job))
     };
