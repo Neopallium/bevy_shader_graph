@@ -1163,7 +1163,7 @@ dependencies = [
 
 [[package]]
 name = "bevy_shader_graph"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "anyhow",
  "bevy",
@@ -1454,7 +1454,7 @@ dependencies = [
  "bitflags 2.6.0",
  "cexpr",
  "clang-sys",
- "itertools 0.12.1",
+ "itertools 0.13.0",
  "log",
  "prettyplease",
  "proc-macro2",
@@ -3327,6 +3327,8 @@ dependencies = [
 [[package]]
 name = "node_engine"
 version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d3e090ace2e5d35a652acc11985afb9cc0e96e41b041b5ca4ecdf062d973666"
 dependencies = [
  "anyhow",
  "bevy",

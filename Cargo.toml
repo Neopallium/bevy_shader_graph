@@ -1,6 +1,6 @@
 [package]
 name = "bevy_shader_graph"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Robert G. Jakabosky <rjakabosky+neopallium@neoawareness.com>"]
 license = "MIT/Apache-2.0"
@@ -20,8 +20,8 @@ default = ["egui"]
 egui = ["dep:egui", "egui_extras"]
 
 [dependencies]
-node_engine = { version = "0.5", path = "../node_engine/" }
-#node_engine = { version = "0.5" }
+#node_engine = { version = "0.5", path = "../node_engine/" }
+node_engine = { version = "0.5" }
 anyhow = "1.0"
 log = "0.4"
 serde = { version = "1", features = ["derive", "rc"] }
