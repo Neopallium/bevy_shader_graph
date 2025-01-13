@@ -1,9 +1,6 @@
 //! Shader graph for Bevy engine.
 
-use bevy::{
-  pbr::*,
-  prelude::*,
-};
+use bevy::{pbr::*, prelude::*};
 
 pub mod material;
 pub use material::*;
@@ -16,9 +13,9 @@ pub use editor::*;
 pub struct ShaderGraphMaterialPlugin;
 
 impl Plugin for ShaderGraphMaterialPlugin {
-  fn build(&self, app: &mut App) {
-    app.add_plugins(MaterialPlugin::<StandardShaderGraphMaterial>::default())
-      .register_asset_reflect::<StandardShaderGraphMaterial>()
-      .register_asset_reflect::<ShaderGraphMaterial>();
-  }
+    fn build(&self, app: &mut App) {
+        app.add_plugins(MaterialPlugin::<StandardShaderGraphMaterial>::default())
+            .register_asset_reflect::<StandardShaderGraphMaterial>()
+            .register_asset_reflect::<ShaderGraphMaterial>();
+    }
 }

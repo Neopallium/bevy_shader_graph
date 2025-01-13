@@ -1,19 +1,15 @@
 use bevy::{
-  pbr::*,
-  prelude::*,
-  reflect::Reflect,
-  render::{
-    render_resource::*,
-    mesh::*,
-  },
+    pbr::*,
+    prelude::*,
+    reflect::Reflect,
+    render::{mesh::*, render_resource::*},
 };
 
-#[derive(Clone, Debug, Default, PartialEq, Eq, Hash)]
-#[derive(Reflect)]
+#[derive(Clone, Debug, Default, PartialEq, Eq, Hash, Reflect)]
 #[reflect(Default, Debug)]
 pub struct ShaderGraph {
-  pub vertex: Option<Handle<Shader>>,
-  pub fragment: Option<Handle<Shader>>,
+    pub vertex: Option<Handle<Shader>>,
+    pub fragment: Option<Handle<Shader>>,
 }
 
 pub type StandardShaderGraphMaterial = ExtendedMaterial<StandardMaterial, ShaderGraphMaterial>;
@@ -22,54 +18,54 @@ pub type StandardShaderGraphMaterial = ExtendedMaterial<StandardMaterial, Shader
 #[bind_group_data(ShaderGraph)]
 #[reflect(Default, Debug)]
 pub struct ShaderGraphMaterial {
-  #[uniform(100)]
-  pub prop4: Vec4,
-  #[reflect(ignore)]
-  pub graph: ShaderGraph,
+    #[uniform(100)]
+    pub prop4: Vec4,
+    #[reflect(ignore)]
+    pub graph: ShaderGraph,
 }
 
 impl Default for ShaderGraphMaterial {
-  fn default() -> Self {
-    Self {
-      prop4: Default::default(),
-      graph: Default::default(),
+    fn default() -> Self {
+        Self {
+            prop4: Default::default(),
+            graph: Default::default(),
+        }
     }
-  }
 }
 
 impl From<&ShaderGraphMaterial> for ShaderGraph {
-  fn from(material: &ShaderGraphMaterial) -> Self {
-    material.graph.clone()
-  }
+    fn from(material: &ShaderGraphMaterial) -> Self {
+        material.graph.clone()
+    }
 }
 
 impl MaterialExtension for ShaderGraphMaterial {
-  fn fragment_shader() -> ShaderRef {
-    "shaders/shader_graph.wgsl".into()
-  }
-
-  fn deferred_fragment_shader() -> ShaderRef {
-    "shaders/shader_graph.wgsl".into()
-  }
-
-  fn specialize(
-      _pipeline: &MaterialExtensionPipeline,
-      descriptor: &mut RenderPipelineDescriptor,
-      _layout: &MeshVertexBufferLayoutRef,
-      key: MaterialExtensionKey<Self>
-  ) -> Result<(), SpecializedMeshPipelineError> {
-    //eprintln!("-- mesh.layout={layout:#?}");
-    //eprintln!("-- pipeline.layout={:#?}", descriptor.layout);
-    if let Some(new_vertex) = key.bind_group_data.vertex {
-        descriptor.vertex.shader = new_vertex;
+    fn fragment_shader() -> ShaderRef {
+        "shaders/shader_graph.wgsl".into()
     }
 
-    if let Some(new_fragment) = key.bind_group_data.fragment {
-      if let Some(fragment) = descriptor.fragment.as_mut() {
-        fragment.shader = new_fragment;
-      }
+    fn deferred_fragment_shader() -> ShaderRef {
+        "shaders/shader_graph.wgsl".into()
     }
 
-    Ok(())
-  }
+    fn specialize(
+        _pipeline: &MaterialExtensionPipeline,
+        descriptor: &mut RenderPipelineDescriptor,
+        _layout: &MeshVertexBufferLayoutRef,
+        key: MaterialExtensionKey<Self>,
+    ) -> Result<(), SpecializedMeshPipelineError> {
+        //eprintln!("-- mesh.layout={layout:#?}");
+        //eprintln!("-- pipeline.layout={:#?}", descriptor.layout);
+        if let Some(new_vertex) = key.bind_group_data.vertex {
+            descriptor.vertex.shader = new_vertex;
+        }
+
+        if let Some(new_fragment) = key.bind_group_data.fragment {
+            if let Some(fragment) = descriptor.fragment.as_mut() {
+                fragment.shader = new_fragment;
+            }
+        }
+
+        Ok(())
+    }
 }

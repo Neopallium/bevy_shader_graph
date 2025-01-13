@@ -1,63 +1,61 @@
 use anyhow::Result;
 
 use bevy::{
-  prelude::*,
-  render::mesh::*,
-  input::common_conditions,
-  diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin},
+    diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin},
+    input::common_conditions,
+    prelude::*,
+    render::mesh::*,
 };
 use bevy_egui::EguiPlugin;
 
 use bevy_shader_graph::*;
 
 fn main() -> Result<()> {
-  let file = std::env::args().nth(1);
-  let mut editor = ShaderGraphEditor::new();
-  if let Some(file) = file {
-    editor.load(file)?;
-  }
+    let file = std::env::args().nth(1);
+    let mut editor = ShaderGraphEditor::new();
+    if let Some(file) = file {
+        editor.load(file)?;
+    }
 
-  let mut app = App::new();
+    let mut app = App::new();
 
-  app.add_plugins((
-    DefaultPlugins.set(WindowPlugin {
-        primary_window: Some(Window {
-            title: "Shader graph editor".into(),
-            ..default()
-        }),
-        ..default()
-    }).set(
-      AssetPlugin {
-        mode: AssetMode::Processed,
-        ..default()
-      }
-    ),
-    EguiPlugin,
-    LogDiagnosticsPlugin::default(),
-    FrameTimeDiagnosticsPlugin,
-  ));
-
-  app.add_plugins(ShaderGraphMaterialPlugin)
-    .add_plugins(bevy_inspector_egui::quick::WorldInspectorPlugin::new()
-      .run_if(common_conditions::input_toggle_active(false, KeyCode::KeyE))
-    )
-    .add_plugins(bevy_panorbit_camera::PanOrbitCameraPlugin)
-    .insert_resource(editor)
-    .add_systems(Startup, setup)
-    .add_systems(Update, (
-      shader_editor,
-      handle_quit,
+    app.add_plugins((
+        DefaultPlugins
+            .set(WindowPlugin {
+                primary_window: Some(Window {
+                    title: "Shader graph editor".into(),
+                    ..default()
+                }),
+                ..default()
+            })
+            .set(AssetPlugin {
+                mode: AssetMode::Processed,
+                ..default()
+            }),
+        EguiPlugin,
+        LogDiagnosticsPlugin::default(),
+        FrameTimeDiagnosticsPlugin,
     ));
 
-  app.run();
+    app.add_plugins(ShaderGraphMaterialPlugin)
+        .add_plugins(
+            bevy_inspector_egui::quick::WorldInspectorPlugin::new()
+                .run_if(common_conditions::input_toggle_active(false, KeyCode::KeyE)),
+        )
+        .add_plugins(bevy_panorbit_camera::PanOrbitCameraPlugin)
+        .insert_resource(editor)
+        .add_systems(Startup, setup)
+        .add_systems(Update, (shader_editor, handle_quit));
 
-  Ok(())
+    app.run();
+
+    Ok(())
 }
 
 fn handle_quit(input: Res<ButtonInput<KeyCode>>, mut exit: EventWriter<AppExit>) {
-  if input.pressed(KeyCode::KeyQ) {
-    exit.send(AppExit::Success);
-  }
+    if input.pressed(KeyCode::KeyQ) {
+        exit.send(AppExit::Success);
+    }
 }
 
 /// set up a simple 3D scene
@@ -73,15 +71,15 @@ fn setup(
         Mesh3d(meshes.add(Circle::new(4.0))),
         MeshMaterial3d(materials.add(Color::WHITE)),
         Transform::from_xyz(0.0, -0.5, 1.0)
-          .with_rotation(Quat::from_rotation_x(-std::f32::consts::FRAC_PI_2)),
+            .with_rotation(Quat::from_rotation_x(-std::f32::consts::FRAC_PI_2)),
     ));
     let mat1 = graph_materials.add(StandardShaderGraphMaterial {
-      base: StandardMaterial {
-        base_color_texture: Some(asset_server.load("textures/test_room_E.png")),
-        reflectance: 1.0,
-        ..default()
-      },
-      extension: ShaderGraphMaterial::default(),
+        base: StandardMaterial {
+            base_color_texture: Some(asset_server.load("textures/test_room_E.png")),
+            reflectance: 1.0,
+            ..default()
+        },
+        extension: ShaderGraphMaterial::default(),
     });
     /*
     let mat1 = graph_materials.add(StandardShaderGraphMaterial {
@@ -106,13 +104,19 @@ fn setup(
     Name::new("Front cube")));
     */
 
-    let mesh = Mesh3d(meshes.add(PlaneMeshBuilder::from_length(1.0).subdivisions(0).build()
-      .with_generated_tangents().unwrap()));
+    let mesh = Mesh3d(
+        meshes.add(
+            PlaneMeshBuilder::from_length(1.0)
+                .subdivisions(0)
+                .build()
+                .with_generated_tangents()
+                .unwrap(),
+        ),
+    );
     // wall
     let mut wall = commands.spawn((
         mesh.clone(),
-        Transform::from_xyz(0.0, 0.0, 0.0)
-          .with_rotation(Quat::from_rotation_x(1.570796)),
+        Transform::from_xyz(0.0, 0.0, 0.0).with_rotation(Quat::from_rotation_x(1.570796)),
         MeshMaterial3d(mat1.clone()),
     ));
     wall.insert(Name::new("Wall"));
@@ -130,16 +134,16 @@ fn setup(
     // camera
     let mut cam = commands.spawn((
         Camera3d::default(),
-      Transform::from_xyz(5.0, 0.0, 0.0)
-        .looking_at(Vec3::new(0., 0., 0.), Vec3::Y),
-    DistanceFog {
-        color: Color::srgba(0.25, 0.25, 0.25, 1.0),
-        falloff: FogFalloff::Linear {
-            start: 5.0,
-            end: 20.0,
+        Transform::from_xyz(5.0, 0.0, 0.0).looking_at(Vec3::new(0., 0., 0.), Vec3::Y),
+        DistanceFog {
+            color: Color::srgba(0.25, 0.25, 0.25, 1.0),
+            falloff: FogFalloff::Linear {
+                start: 5.0,
+                end: 20.0,
+            },
+            ..default()
         },
-        ..default()
-    }));
+    ));
 
     cam.insert(bevy_panorbit_camera::PanOrbitCamera {
         focus: Vec3::new(0.0, 0.0, 0.0),
@@ -147,7 +151,6 @@ fn setup(
         yaw: Some(0.00),
         pitch: Some(0.0),
         ..default()
-      },
-    );
+    });
     cam.insert(Name::new("Camera"));
 }
