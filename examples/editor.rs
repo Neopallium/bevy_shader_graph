@@ -3,8 +3,8 @@ use anyhow::Result;
 use bevy::{
     diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin},
     input::common_conditions,
+    mesh::*,
     prelude::*,
-    render::mesh::*,
 };
 use bevy_egui::{EguiPlugin, EguiPrimaryContextPass};
 
@@ -29,7 +29,7 @@ fn main() -> Result<()> {
                 ..default()
             })
             .set(AssetPlugin {
-                mode: AssetMode::Processed,
+                //mode: AssetMode::Processed,
                 ..default()
             }),
         EguiPlugin::default(),
@@ -53,7 +53,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-fn handle_quit(input: Res<ButtonInput<KeyCode>>, mut exit: EventWriter<AppExit>) {
+fn handle_quit(input: Res<ButtonInput<KeyCode>>, mut exit: MessageWriter<AppExit>) {
     if input.pressed(KeyCode::KeyQ) {
         exit.write(AppExit::Success);
     }

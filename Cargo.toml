@@ -9,13 +9,13 @@ keywords = ["Shadergraph", "node", "graph"]
 repository = "https://github.com/Neopallium/bevy_shader_graph"
 homepage = "https://github.com/Neopallium/bevy_shader_graph"
 
-exclude = [
-	"examples/*",
-	"assets/textures/*",
-]
+exclude = ["examples/*", "assets/textures/*"]
 
 [features]
-default = ["egui", "winit"]
+default = ["egui", "winit", "file_watcher"]
+
+# file/embed watcher
+file_watcher = ["bevy/file_watcher", "bevy/embedded_watcher"]
 
 # To make winit happy when running `cargo check` or `cargo publish`.
 winit = ["dep:winit"]
@@ -30,25 +30,35 @@ log = "0.4"
 serde = { version = "1", features = ["derive", "rc"] }
 serde_json = { version = "1" }
 
-glam = { version = "0.29", features = ["serde"] }
+glam = { version = "0.30", features = ["serde"] }
 
-bevy = { version = "0.16", default-features = false, features = ["bevy_asset", "bevy_render", "bevy_pbr"] }
-bevy_egui = { version = "0.36", default-features = false }
+bevy = { version = "0.17", default-features = false, features = [
+	"bevy_asset",
+	"bevy_render",
+	"bevy_pbr",
+] }
+bevy_egui = { version = "0.37", default-features = false }
 egui = { version = "0.32", default-features = false, optional = true }
 egui_extras = { version = "0.32", default-features = false, optional = true }
 
 winit = { version = "0.30", optional = true }
 
 [dev-dependencies]
-bevy = { version = "0.16", features = ["file_watcher", "asset_processor", "basis-universal", "jpeg", "tga", "exr", "zlib", "zstd", "ktx2"] }
+bevy = { version = "0.17", features = [
+	"basis-universal",
+	"jpeg",
+	"tga",
+	"exr",
+	"zlib",
+	"ktx2",
+] }
 
-bevy_egui = { version = "0.36" }
+bevy_egui = { version = "0.37" }
 egui = { version = "0.32" }
 egui_extras = { version = "0.32" }
 
-bevy-inspector-egui = { version = "0.33" }
-bevy_panorbit_camera = { version = "0.28", features = ["bevy_egui"] }
-bevy_spectator = "0.8.0"
+bevy-inspector-egui = { version = "0.34" }
+bevy_panorbit_camera = { version = "0.30", features = ["bevy_egui"] }
 
 # Enable a small amount of optimization in debug mode
 [profile.dev]
