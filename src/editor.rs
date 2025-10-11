@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 
 use anyhow::Result;
 
-use bevy::prelude::*;
+use bevy::prelude::{Result as BevyResult, *};
 use bevy_egui::{egui, EguiContexts};
 
 use node_engine::{NodeGraph, NodeGraphCompile, NodeRegistry};
@@ -104,11 +104,11 @@ impl ShaderGraphEditor {
 
     pub fn ui(&mut self, ui: &mut egui::Ui) {
         egui::TopBottomPanel::top("graph_top_panel").show_inside(ui, |ui| {
-            egui::menu::bar(ui, |ui| {
+            egui::MenuBar::new().ui(ui, |ui| {
                 ui.menu_button("File", |ui| {
                     if ui.button("Save").clicked() {
                         let _ = self.handle_result("Failed to save", self.save());
-                        ui.close_menu();
+                        ui.close_kind(egui::UiKind::Menu);
                     }
                 });
             });
@@ -147,12 +147,12 @@ impl ShaderGraphEditor {
         let Self { code, .. } = self;
 
         let theme = egui_extras::syntax_highlighting::CodeTheme::from_memory(ui.ctx(), ui.style());
-        let mut layouter = |ui: &egui::Ui, string: &str, wrap_width: f32| {
+        let mut layouter = |ui: &egui::Ui, buf: &dyn egui::TextBuffer, wrap_width: f32| {
             let mut layout_job = egui_extras::syntax_highlighting::highlight(
                 ui.ctx(),
                 ui.style(),
                 &theme,
-                string,
+                buf.as_str(),
                 "rs",
             );
             layout_job.wrap.max_width = wrap_width;
@@ -202,8 +202,8 @@ pub fn shader_editor(
     mut contexts: EguiContexts,
     mut shaders: ResMut<Assets<Shader>>,
     mut materials: ResMut<Assets<StandardShaderGraphMaterial>>,
-) {
-    let ctx = contexts.ctx_mut();
+) -> BevyResult {
+    let ctx = contexts.ctx_mut()?;
     if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::KeyS) {
         editor.toggle_open();
     }
@@ -219,4 +219,6 @@ pub fn shader_editor(
             mat.extension.graph.fragment = Some(shader.clone());
         }
     }
+
+    Ok(())
 }

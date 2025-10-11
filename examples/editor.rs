@@ -6,7 +6,7 @@ use bevy::{
     prelude::*,
     render::mesh::*,
 };
-use bevy_egui::EguiPlugin;
+use bevy_egui::{EguiPlugin, EguiPrimaryContextPass};
 
 use bevy_shader_graph::*;
 
@@ -32,9 +32,9 @@ fn main() -> Result<()> {
                 mode: AssetMode::Processed,
                 ..default()
             }),
-        EguiPlugin,
+        EguiPlugin::default(),
         LogDiagnosticsPlugin::default(),
-        FrameTimeDiagnosticsPlugin,
+        FrameTimeDiagnosticsPlugin::default(),
     ));
 
     app.add_plugins(ShaderGraphMaterialPlugin)
@@ -45,7 +45,8 @@ fn main() -> Result<()> {
         .add_plugins(bevy_panorbit_camera::PanOrbitCameraPlugin)
         .insert_resource(editor)
         .add_systems(Startup, setup)
-        .add_systems(Update, (shader_editor, handle_quit));
+        .add_systems(Update, handle_quit)
+        .add_systems(EguiPrimaryContextPass, shader_editor);
 
     app.run();
 
@@ -54,7 +55,7 @@ fn main() -> Result<()> {
 
 fn handle_quit(input: Res<ButtonInput<KeyCode>>, mut exit: EventWriter<AppExit>) {
     if input.pressed(KeyCode::KeyQ) {
-        exit.send(AppExit::Success);
+        exit.write(AppExit::Success);
     }
 }
 
