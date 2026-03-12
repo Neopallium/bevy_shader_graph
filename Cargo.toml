@@ -1,6 +1,6 @@
 [package]
 name = "bevy_shader_graph"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2021"
 authors = ["Robert G. Jakabosky <rjakabosky+neopallium@neoawareness.com>"]
 license = "MIT/Apache-2.0"
