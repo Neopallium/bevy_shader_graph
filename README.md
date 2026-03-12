@@ -15,7 +15,8 @@ cargo run --release --example editor -- ./interior_mapping.json
 
 ## Versions
 
-- Bevy 0.15: `bevy_fake_interior = "0.2"`
-- Bevy 0.14: `bevy_fake_interior = "0.1"`
-- Bevy 0.13: `bevy_fake_interior = "0.0.2"`
-- Bevy 0.12: `bevy_fake_interior = "0.0.1"`
+- Bevy 0.16: `bevy_shader_graph = "0.3"`
+- Bevy 0.15: `bevy_shader_graph = "0.2"`
+- Bevy 0.14: `bevy_shader_graph = "0.1"`
+- Bevy 0.13: `bevy_shader_graph = "0.0.2"`
+- Bevy 0.12: `bevy_shader_graph = "0.0.1"`
