@@ -201,7 +201,7 @@ pub fn shader_editor(
     mut editor: ResMut<ShaderGraphEditor>,
     mut contexts: EguiContexts,
     mut shaders: ResMut<Assets<Shader>>,
-    //mut materials: ResMut<Assets<StandardShaderGraphMaterial>>,
+    mut materials: ResMut<Assets<StandardShaderGraphMaterial>>,
 ) -> BevyResult {
     let ctx = contexts.ctx_mut()?;
     if !ctx.wants_keyboard_input() && input.just_pressed(KeyCode::KeyS) {
@@ -214,21 +214,11 @@ pub fn shader_editor(
     editor.show_preview(ctx);
 
     if let Some(shader) = editor.recompile() {
-        //eprintln!("Recompiled shader: {:?}", &GRAPH_FRAGMENT_HANDLE);
-        if let Some(frag) = shaders.get_mut(&GRAPH_FRAGMENT_HANDLE) {
-            eprintln!("Updating shader");
-            *frag = shader;
-        } else {
-            eprintln!("Inserting shader");
-            shaders.insert(&GRAPH_FRAGMENT_HANDLE, shader)?;
-        }
-        /*
-        //let shader = shaders.add(shader);
+        eprintln!("Updating shader");
+        let shader = shaders.add(shader);
         for (_, mat) in materials.iter_mut() {
-            //mat.extension.graph.fragment = Some(shader.clone());
-            mat.extension.graph.nonce += 1;
+            mat.extension.graph.fragment = Some(shader.clone());
         }
-        // */
     }
 
     Ok(())

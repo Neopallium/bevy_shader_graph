@@ -3699,9 +3699,9 @@ dependencies = [
 
 [[package]]
 name = "node_engine"
-version = "0.6.0"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "84fe3f8eb0acb7f098283e49120a1364028d7e678a0d9db7f136f4ec9be4bc27"
+checksum = "d3548a29e9f722ffdb8e23520e7e740a573fed5884529ea88ca26955d2ca95a0"
 dependencies = [
  "anyhow",
  "bevy",
@@ -3807,7 +3807,7 @@ version = "0.50.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
